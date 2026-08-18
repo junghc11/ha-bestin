@@ -70,7 +70,7 @@ BESTIN 구성요소의 디버그 로깅을 활성화하고 생성된 파일을 �
 logger:
   default: info
   logs:
-    custom_components.bestin: debug
+    custom_components.bestin_restapi: debug
 ```
 
 ## 라이선스

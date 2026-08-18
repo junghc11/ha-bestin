@@ -1,0 +1,54 @@
+{
+    "entity": {
+        "sensor": {
+            "latest_vehicle_access": {
+                "name": "Latest vehicle access",
+                "state": {
+                    "arrival": "Arrival",
+                    "departure": "Departure",
+                    "parked": "Parked",
+                    "unknown": "Unknown"
+                }
+            },
+            "latest_visitor_access": {
+                "name": "Latest visitor access",
+                "state": {
+                    "lobby": "Lobby",
+                    "main_gate": "Common entrance",
+                    "unit_entrance": "Unit entrance",
+                    "unknown": "Unknown"
+                }
+            }
+        },
+        "event": {
+            "vehicle_access": {
+                "name": "Vehicle access event",
+                "state_attributes": {
+                    "event_type": {
+                        "name": "Event type",
+                        "state": {
+                            "arrival": "Arrival",
+                            "departure": "Departure",
+                            "parked": "Parked",
+                            "unknown": "Unknown"
+                        }
+                    }
+                }
+            },
+            "visitor_access": {
+                "name": "Visitor access event",
+                "state_attributes": {
+                    "event_type": {
+                        "name": "Event type",
+                        "state": {
+                            "lobby": "Lobby",
+                            "main_gate": "Common entrance",
+                            "unit_entrance": "Unit entrance",
+                            "unknown": "Unknown"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
