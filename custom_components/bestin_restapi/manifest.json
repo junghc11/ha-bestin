@@ -9,9 +9,9 @@
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/junghc11/ha-bestin/issues",
   "requirements": [
-    "pyserial-asyncio",
+    "pyserial-asyncio-fast",
     "aiofiles",
     "xmltodict"
   ],
-  "version": "1.1.10"
+  "version": "1.1.11"
 }

@@ -8,8 +8,6 @@ from homeassistant.components.light import (
     ColorMode,
     DOMAIN as LIGHT_DOMAIN,
     LightEntity,
-    COLOR_MODE_BRIGHTNESS,
-    COLOR_MODE_COLOR_TEMP,
     ATTR_BRIGHTNESS,
     ATTR_COLOR_TEMP_KELVIN,
 )
@@ -19,7 +17,12 @@ from homeassistant.core import callback, HomeAssistant
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from .const import CONF_VERSION, NEW_LIGHT
+from .const import (
+    COLOR_MODE_BRIGHTNESS,
+    COLOR_MODE_COLOR_TEMP,
+    CONF_VERSION,
+    NEW_LIGHT,
+)
 from .device import BestinDevice
 from .hub import BestinHub
 

@@ -7,7 +7,12 @@ from homeassistant.const import Platform
 
 DOMAIN = "bestin_restapi"
 NAME = "BESTIN"
-VERSION = "1.1.10"
+VERSION = "1.1.11"
+
+# Home Assistant 2026.7 removed these legacy exports from the light module.
+# They remain the on-wire/state dictionary keys used by BESTIN smart lights.
+COLOR_MODE_BRIGHTNESS = "brightness"
+COLOR_MODE_COLOR_TEMP = "color_temp"
 
 PLATFORMS: list[Platform] = [
     Platform.BUTTON,

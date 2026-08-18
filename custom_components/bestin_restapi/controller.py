@@ -10,15 +10,13 @@ from homeassistant.components.climate.const import (
     HVACMode,
 )
 from homeassistant.components.fan import SERVICE_SET_PERCENTAGE
-from homeassistant.components.light import (
-    COLOR_MODE_BRIGHTNESS,
-    COLOR_MODE_COLOR_TEMP,
-)
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.const import ATTR_STATE, WIND_SPEED
 
 from .const import (
+    COLOR_MODE_BRIGHTNESS,
+    COLOR_MODE_COLOR_TEMP,
     LOGGER,
     DEFAULT_MAX_SEND_RETRY,
     DEFAULT_PACKET_VIEWER,
