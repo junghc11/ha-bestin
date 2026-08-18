@@ -186,6 +186,20 @@ class BestinEnergyStatisticsImporter:
             for day, channels in self.daily.items()
             if day < today and "electricity" in channels
         )[-30:]
+        previous_year_recent_rows = []
+        for day, _value in recent_rows:
+            try:
+                source_day = day.replace(year=day.year - 1)
+            except ValueError:
+                source_day = day.replace(year=day.year - 1, day=28)
+            previous_value = self.daily.get(source_day, {}).get("electricity")
+            previous_year_recent_rows.append(
+                {
+                    "date": day.isoformat(),
+                    "source_date": source_day.isoformat(),
+                    "value": previous_value,
+                }
+            )
 
         current_total = round(sum(value for _day, value in current_rows), 2)
         previous_total = round(sum(value for _day, value in previous_rows), 2)
@@ -213,6 +227,7 @@ class BestinEnergyStatisticsImporter:
                 {"date": day.isoformat(), "value": value}
                 for day, value in recent_rows
             ],
+            "previous_year_recent_30_days": previous_year_recent_rows,
         }
 
     @callback
