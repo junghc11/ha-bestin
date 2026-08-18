@@ -7,7 +7,7 @@ from homeassistant.const import Platform
 
 DOMAIN = "bestin_restapi"
 NAME = "BESTIN"
-VERSION = "1.1.11"
+VERSION = "1.1.12"
 
 # Home Assistant 2026.7 removed these legacy exports from the light module.
 # They remain the on-wire/state dictionary keys used by BESTIN smart lights.

@@ -181,6 +181,11 @@ class BestinEnergyStatisticsImporter:
             and day.day <= through_day
             and "electricity" in channels
         )
+        recent_rows = sorted(
+            (day, channels["electricity"])
+            for day, channels in self.daily.items()
+            if day < today and "electricity" in channels
+        )[-30:]
 
         current_total = round(sum(value for _day, value in current_rows), 2)
         previous_total = round(sum(value for _day, value in previous_rows), 2)
@@ -203,6 +208,10 @@ class BestinEnergyStatisticsImporter:
             ],
             "previous_year_same_month_daily": [
                 {"day": day.day, "value": value} for day, value in previous_rows
+            ],
+            "recent_30_days": [
+                {"date": day.isoformat(), "value": value}
+                for day, value in recent_rows
             ],
         }
 
